@@ -1,0 +1,39 @@
+{
+  "name": "Rails",
+  "dockerComposeFile": ["./compose.yml"],
+  "service": "web",
+  "workspaceFolder": "/opt/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "kaiwood.endwise",
+        "oderwat.indent-rainbow",
+        "Shopify.ruby-lsp",
+        "castwide.solargraph"
+      ],
+      "settings": {
+        "editor.tabSize": 2,
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "files.eol": "\n",
+        "files.encoding": "utf8",
+        "files.trimTrailingWhitespace": true,
+        "files.trimFinalNewlines": true,
+        "files.insertFinalNewline": true,
+        "[ruby]": {
+          "editor.defaultFormatter": "castwide.solargraph"
+        },
+        "solargraph.useBundler": true,
+        "solargraph.diagnostics": true,
+        "solargraph.formatting": true
+      }
+    }
+  },
+  "forwardPorts": [3000],
+  "waitFor": "onCreateCommand",
+  "onCreateCommand": "gem install solargraph -v 0.49.0",
+  "postCreateCommand": "bundle config --local path vendor/bundle && bundle install"
+}
