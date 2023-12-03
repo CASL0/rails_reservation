@@ -1,5 +1,5 @@
 {
-  "name": "Rails",
+  "name": "Rails Reservation",
   "dockerComposeFile": ["./compose.yml"],
   "service": "web",
   "workspaceFolder": "/opt/app",
