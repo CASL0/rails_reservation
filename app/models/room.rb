@@ -7,4 +7,6 @@ class Room < ApplicationRecord
   validates_each :number do |record, attr, value|
     record.errors.add(attr, '収容人数は５の倍数で指定してください') unless (value % 5).zero?
   end
+
+  normalizes :name, with: ->(name) { name.strip.gsub(/[\s　]+/, '_') }
 end
