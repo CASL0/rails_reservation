@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class Room < ApplicationRecord
+  has_many :entries, dependent: :destroy
   validates :name, :place, :number, presence: true
   validates :name, length: { maximum: 30 }
   validates :place, inclusion: { in: %w[東京 大阪 福岡 札幌 仙台 名古屋 金沢] }
