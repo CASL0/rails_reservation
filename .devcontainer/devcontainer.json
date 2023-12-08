@@ -10,7 +10,8 @@
         "kaiwood.endwise",
         "oderwat.indent-rainbow",
         "Shopify.ruby-lsp",
-        "castwide.solargraph"
+        "castwide.solargraph",
+        "yzhang.markdown-all-in-one"
       ],
       "settings": {
         "editor.tabSize": 2,
