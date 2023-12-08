@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   root to: 'top#index'
   resources :entries, only: %i[new create destroy index], path: :rentals
+  post 'entry/confirm'
 end
