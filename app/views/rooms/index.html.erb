@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Rooms</h1>
+<%= "最近登録の部屋、#{session[:room]}です。" if session[:room] %>
 
 <div id="rooms">
   <% @rooms.each do |room| %>
